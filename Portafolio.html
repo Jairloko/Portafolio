@@ -6,28 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio</title>
     <link rel="stylesheet" href="portafolio.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
 
-    <div class="contenedor-header">
+    <div class="wrapper">
         <header>
-            <nav>
-                <ul>
-                    <li><a href="#inicio">INICIO</a></li>
+            <nav class="navbar">
+                <div class="brand">
+                    <h2>JA<span>GS</span></h2>
+                </div>
+                <ul class="menu">
+                    <li ><a class="active" href="#inicio">INICIO</a></li>
                     <li><a href="#sobremi">SOBRE MI</a></li>
                     <li><a href="#portafolio">PORTAFOLIO</a></li>
                     <li><a href="#contacto">CONTACTO</a></li>
                 </ul>        
             </nav>
         </header>
+
+        <main class="main">
+            <div class="info-content">
+                <h1>JAHIR GONZÁLEZ</h1>
+                <p>Desarrollador</p>
+                <a href="#" download>
+                    <button class="download-cv" download="">Descargar CV</button>
+                </a>
+                <div class="icons">
+                    <div class="icon">
+                        <a href="https://github.com/Jairloko"><i class='bx bxl-github'></i></a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://www.linkedin.com/in/jahir-gonz%C3%A1lez-946652267/"><i class='bx bxl-linkedin'></i></a>
+                    </div>
+                   
+                </div>
+                
+            </div>
+
+        </main>
     </div>
    
-    <section id="inicio" class="inicio">
-        <div class="contentedor-banner">
-            <span>Hola</span> 
+    <div class="about" id="sobremi">
+        <h1>Sobre mi</h1>
+        <p><span>Hola, soy Jahir Alejandro González Salazar.</span> Actualmente soy estudiante de la carrera Multimedia y Animación Digital de la Facultad 
+        de Ciencias Físico-Matemáticas en la Universidad Autónoma de Nuevo León</p>
+        <p>En mi carrera he visto eh aprendido bastante sobre la programación, por lo que le agarre el gusto, y actualmente me encuentro estudiando para ser un desarrollador web. Mucho gusto!</p>   
+        <div class="info-personal">
+            <div>
+                <h2>Datos personales</h2>
+                <ul class="datos-personales">
+                    <li><span>Nacimiento</span>05-02-2001</li>
+                    <li><span>Dirección</span>Nuevo León,México</li>   
+                </ul>
+            </div>
+            <div>
+                <h2>Intereses</h2>
+                <ul class="intereses">
+                    <li>Programación</li>
+                    <li>Juegos</li>
+                    <li>Música</li>
+                </ul>
+            </div>
         </div>
 
-    </section>
+
+    </div>
    
     
 </body>

@@ -1,69 +1,170 @@
  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-*{
+:root{
+--colorFondo:#212529; 
+--colorFondoAbout:#f8f9fa;
+--colorFondoMenu:#343a40;
+--colorTexto: #EAEBED;
+--colorTexto2: #08B2E3;
+--colorTexto3: #AEA3B0;
+}
+
+@keyframes shake{
+    10%{
+        transform: rotate(15deg);
+    }
+    20%{
+        transform: rotate(-15deg);
+    }
+    30%{
+        transform: rotate(15deg);
+    }
+    40%{
+        transform: rotate(-15deg);
+    }
+}
+
+* {
     box-sizing: border-box;
     margin: 0; 
     padding: 0;
     font-family: 'Roboto';
 }
 
-body{
-    background-color: #2E3239;
-}
-
 html{
- scroll-behavior: smooth;   
+    scroll-behavior: smooth;   
 }
 
-.contenedor-header{
-    background-color: #26292B;
-    position: fixed;
+.wrapper{
     width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 99;
+    height: 100vh;
+    color: var(--colorTexto);
+    background-color: var(--colorFondo);
 }
 
-.contenedor-header header{
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 20px;
+.brand span{
+    color: var(--colorTexto2);
 }
 
-.contenedor-header header ul{
+.navbar{
     display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    font-size: 1.5em;
+    
+}
+
+.menu{
+    display: flex;
+    max-width: 1100px;
+    justify-content: space-around;
+}
+
+.menu li {
     list-style: none;
 }
 
-.contenedor-header header li a{
-    text-align: none;
-    color: #A2B2EE;
-    margin: 0 30px;
-    padding: 3px;
-    transition: 0.5s;
+.menu a{
     text-decoration: none;
-    font-size: 20px;
+    color: var(--colorTexto);
+    padding: 10px 15px;
+}
+
+.menu .active{
+    color: var(--colorTexto2);
+}
+
+.menu a:hover{
+    background-color: var(--colorTexto2);
+    color: var(--colorFondo);
+    transition: ease .5s;
 }
 
 
-/* Bienvenida */
-.inicio, .contentedor-banner{
+/*Primera Parte*/
+
+.main{
+    margin: auto;
+    width: 50vw;
+    height: 80vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-.inicio{
-    height: 100vh; 
+.info-content h1{
+    font-size: clamp(1rem,3rem, 4rem);
 }
 
-.contentedor-banner{
-    width: 50%;
-    background-color: #26292B;
-    color: #A2B2EE;
-    border-radius: 5%;
-    height: 50%;
-    backdrop-filter: blur(10px);
+.info-content p {
+    font-size: 1.5em;
+    margin-top: 15px;
+}
+
+.download-cv{
+    padding: 10px 20px;
+    background-color: var(--colorTexto2);
+    border: none;
+    border-radius: 20px;
+    margin-top: 25px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.download-cv:hover{
+    background-color: var(--colorTexto);
+}
+
+.icons{
+    display: flex;
+    column-gap: 25px;
+    justify-content: center;
+
+}
+
+.icon{
+    display: inline-flex;
+    width: 60px;
+    height: 60px;
+    margin-top: 30px;
+    border-radius: 50%;
+    outline: 2px solid #fff;   
+    font-size: 35px;
+}
+
+.icon:hover{
+    outline-offset: 4px;
+    background-color: var(--colorTexto2);
+    outline-color: var(--colorTexto2);
+    transition: ease-in .15s;
+}
+
+.icon a{
+    margin: auto;
+    display: flex;
+    text-decoration: none;
+}
+
+.icon a>i{
+    margin: auto;
+    color: var(--colorTexto);
+}
+
+.icon i:hover{
+    animation: shake 0.25s;
+}
+
+/* About me*/
+
+.about {
+    height: 100vh;
+    padding: 3em;
+    background-color: var(--colorFondoAbout);
+}
+
+.about h1{
+    font-size: clamp(1rem,3rem, 4rem);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
 }
