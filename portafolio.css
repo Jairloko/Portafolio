@@ -1,12 +1,27 @@
  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 :root{
---colorFondo:#212529; 
+--colorFondoMenu:#212529; 
 --colorFondoAbout:#f8f9fa;
---colorFondoMenu:#343a40;
+--colorFondo:#343A40;
+--colorScroll:#495057;
 --colorTexto: #EAEBED;
 --colorTexto2: #08B2E3;
 --colorTexto3: #AEA3B0;
+}
+
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--colorFondo);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--colorScroll);
+    border-radius: 10px;
 }
 
 @keyframes shake{
@@ -24,6 +39,20 @@
     }
 }
 
+@keyframes slider{
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    75%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+
 * {
     box-sizing: border-box;
     margin: 0; 
@@ -35,23 +64,42 @@ html{
     scroll-behavior: smooth;   
 }
 
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: var(--colorTexto);
+    z-index: 99;
+}
+
 .wrapper{
     width: 100%;
     height: 100vh;
     color: var(--colorTexto);
-    background-color: var(--colorFondo);
+    background: linear-gradient(to top,rgba(30,35,38,.8),rgba(30,35,38,1)),
+    url(Img/backgorund2.webp);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand{
+    margin-top:-10px;
 }
 
 .brand span{
     color: var(--colorTexto2);
 }
 
-.navbar{
+.navbar{   
     display: flex;
     justify-content: space-between;
     padding: 1em;
     font-size: 1.5em;
-    
+    background-color: var(--colorFondoMenu);
+   
 }
 
 .menu{
@@ -60,7 +108,7 @@ html{
     justify-content: space-around;
 }
 
-.menu li {
+li {
     list-style: none;
 }
 
@@ -84,16 +132,19 @@ html{
 /*Primera Parte*/
 
 .main{
-    margin: auto;
-    width: 50vw;
-    height: 80vh;
+    margin: 0;
+    padding: 8em 5em; 
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(33, 37, 41, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
 }
 
 .info-content h1{
     font-size: clamp(1rem,3rem, 4rem);
+    letter-spacing: 10px;
 }
 
 .info-content p {
@@ -157,14 +208,160 @@ html{
 /* About me*/
 
 .about {
-    height: 100vh;
-    padding: 3em;
-    background-color: var(--colorFondoAbout);
+    padding: 5em 7em;
+    background-color: var(--colorFondo);
+    color: var(--colorTexto);
+    font-weight: lighter;
+    height: 75vh;
+}
+.about-info{
+    max-width: 80vw;
+    margin: auto;
 }
 
-.about h1{
+.about-info h1{
     font-size: clamp(1rem,3rem, 4rem);
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.about-info p{
+    font-size: 1.3em;
+    margin-bottom: 1.5em;
+  
+}
+
+.about-info p>span{
+    color: var(--colorTexto2);
+    font-weight: bold;
+}
+
+.info-personal{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3em;
+    font-size: 20px;
+}
+
+.info-personal div{
+    flex: 0 0 50%;
+}
+
+.datos-personales h2, .intereses h2{
+    margin-bottom: 1.5em;
+}
+
+.datos-li{
+    margin: 12px 0;
+}
+
+.datos-li span{
+    display: inline-block;
+    width: 150px;
+    color: var(--colorTexto2);
+    font-weight: bold;
+}
+
+.intereses ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.intereses ul li{
+    width: 100px;
+    height: 100px;
+    background-color: var(--colorFondoMenu);
     display: flex;
     justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+    transition: .3s;
+    font-size: 20px;
+}
+
+.intereses ul li:hover{
+    background-color: var(--colorTexto2);
+}
+
+.intereses ul li i{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Portafolio */
+.portfolio{
+    padding: 5em 7em;
+    font-weight: lighter;
+    height: 75vh;
+}
+
+.portfolio h1{
+    font-size: clamp(1rem,3rem, 4rem);
+    text-align: center;
     margin-bottom: 1em;
+}
+
+.projects{
+    display: flex;
+    justify-content: space-around;
+    gap: 2em;
+    padding: 0 2em;
+    flex-wrap: wrap;
+}
+
+.project{
+    overflow: hidden;
+    max-width: 450px;
+    position: relative;
+    color: var(--colorTexto);
+}
+
+.project ul{
+    display: flex;
+    animation: slider 20s infinite;
+    width: 400%;
+}
+
+.project ul li{
+    width: 100%;
+    list-style: none;
+}
+
+.project img{
+    width: 100%;
+    height: 100%;
+   
+}
+
+.project .info-project{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(52, 58, 64, 0.7);
+    backdrop-filter: blur(0.1rem);
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    transition: .3s;
+}
+
+.project:hover .info-project {
+    opacity: 1;
+    visibility: visible;
+}
+
+.info-project h2{
+    color: var(--colorTexto2);
+    font-weight: bold;
+    margin-bottom: 1.2em;
+}
+
+.info-project p{
+   padding: 0 1em;
 }
