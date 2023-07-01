@@ -49,7 +49,7 @@
     50%{margin-left: -200%;}
     75%{margin-left: -200%;}
 
-    75%{margin-left: -300%;}
+    80%{margin-left: -300%;}
     100%{margin-left: -300%;}
 }
 
@@ -65,7 +65,6 @@ html{
 }
 
 header{
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -118,9 +117,6 @@ li {
     padding: 10px 15px;
 }
 
-.menu .active{
-    color: var(--colorTexto2);
-}
 
 .menu a:hover{
     background-color: var(--colorTexto2);
@@ -212,8 +208,8 @@ li {
     background-color: var(--colorFondo);
     color: var(--colorTexto);
     font-weight: lighter;
-    height: 75vh;
 }
+
 .about-info{
     max-width: 80vw;
     margin: auto;
@@ -239,12 +235,14 @@ li {
 .info-personal{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     margin-top: 3em;
-    font-size: 20px;
+    font-size: 20px; 
+    flex: 0 0 50%;
 }
 
 .info-personal div{
-    flex: 0 0 50%;
+   margin-bottom: 3em;
 }
 
 .datos-personales h2, .intereses h2{
@@ -294,7 +292,6 @@ li {
 .portfolio{
     padding: 5em 7em;
     font-weight: lighter;
-    height: 75vh;
 }
 
 .portfolio h1{
@@ -309,13 +306,15 @@ li {
     gap: 2em;
     padding: 0 2em;
     flex-wrap: wrap;
+    
 }
 
 .project{
     overflow: hidden;
-    max-width: 450px;
+    max-width: 500px;
     position: relative;
     color: var(--colorTexto);
+    
 }
 
 .project ul{
@@ -364,4 +363,32 @@ li {
 
 .info-project p{
    padding: 0 1em;
+}
+
+/* Contacto */
+.contact{
+    padding: 5em 7em;
+    color: var(--colorTexto);
+    font-weight: lighter;
+    background-color: #000;
+}
+
+.contact h1{
+    text-align: center;
+    font-size: clamp(1rem,3rem, 4rem);
+    margin-bottom: 1em;
+}
+
+.contactos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 1.2em 0;
+}
+
+.contactos span>i{
+    color: var(--colorTexto2);
 }
