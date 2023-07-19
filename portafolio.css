@@ -2,8 +2,9 @@
 
 :root{
 --colorFondoMenu:#212529; 
---colorFondoAbout:#f8f9fa;
+--colorFondoPortfolio:#E9ECEF;
 --colorFondo:#343A40;
+--colorFondoScroll:#6C757D;
 --colorScroll:#495057;
 --colorTexto: #EAEBED;
 --colorTexto2: #08B2E3;
@@ -16,11 +17,11 @@
 }
 
 ::-webkit-scrollbar-track{
-    background-color: var(--colorFondo);
+    background-color: var(--colorScroll);
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: var(--colorScroll);
+    background-color: var(--colorFondoScroll);
     border-radius: 10px;
 }
 
@@ -65,6 +66,7 @@ html{
 }
 
 header{
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -107,6 +109,12 @@ header{
     justify-content: space-around;
 }
 
+.nav-responsive{
+    display: none;
+    color: var(--colorTexto2);
+    font-size: 1.2em;
+}
+
 li {
     list-style: none;
 }
@@ -116,7 +124,6 @@ li {
     color: var(--colorTexto);
     padding: 10px 15px;
 }
-
 
 .menu a:hover{
     background-color: var(--colorTexto2);
@@ -134,7 +141,7 @@ li {
     justify-content: center;
     align-items: center;
     background: rgba(33, 37, 41, 0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); 
     border-radius: 20px;
 }
 
@@ -208,6 +215,7 @@ li {
     background-color: var(--colorFondo);
     color: var(--colorTexto);
     font-weight: lighter;
+    min-height: 900px;
 }
 
 .about-info{
@@ -222,8 +230,8 @@ li {
 }
 
 .about-info p{
-    font-size: 1.3em;
-    margin-bottom: 1.5em;
+    font-size: 1.5em;
+    margin-bottom: 1.7em;
   
 }
 
@@ -236,7 +244,7 @@ li {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-top: 3em;
+    margin-top: 5em;
     font-size: 20px; 
     flex: 0 0 50%;
 }
@@ -251,6 +259,7 @@ li {
 
 .datos-li{
     margin: 12px 0;
+    font-size: 1.1em;
 }
 
 .datos-li span{
@@ -290,8 +299,10 @@ li {
 
 /* Portafolio */
 .portfolio{
+    min-height: 800px;
     padding: 5em 7em;
     font-weight: lighter;
+    background-color: var(--colorFondoPortfolio);
 }
 
 .portfolio h1{
@@ -306,7 +317,7 @@ li {
     gap: 2em;
     padding: 0 2em;
     flex-wrap: wrap;
-    
+    margin-bottom: 2em;
 }
 
 .project{
@@ -384,11 +395,53 @@ li {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 1.5em;
+    font-weight: lighter;
     margin: 1.2em 0;
 }
 
 .contactos span>i{
     color: var(--colorTexto2);
+}
+
+/* Responsive */
+
+@media screen and (max-width:800px) {
+    .menu{
+       flex-direction: column;
+       justify-content: center;
+       position: absolute;
+       top: 0;
+       left: 0;
+       height: 100vh;
+       background-color: var(--colorFondoMenu);
+       transform: translateX(-110%);
+       transition: all 0.5s ease-in;
+    }
+    
+    .show-menu{
+        transform: translateX(0%);
+    }
+
+    .menu li{
+        margin: 2em;
+    }
+
+    .nav-responsive{
+        display: block;
+    }
+
+    .nav-responsive:hover{
+        cursor: pointer;
+    }
+
+    .nav-responsive .bx-x{
+        display: none;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .main{
+        padding: 4em 3em; 
+    }
 }

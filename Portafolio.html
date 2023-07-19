@@ -10,21 +10,24 @@
 
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="brand">
-                <h2>JA<span>GS</span></h2>
-            </div>
-            <ul class="menu">
-                <li ><a class="active" href="#inicio">INICIO</a></li>
-                <li><a href="#sobremi">SOBRE MI</a></li>
-                <li><a href="#portafolio">PORTAFOLIO</a></li>
-                <li><a href="#contacto">CONTACTO</a></li>
-            </ul>        
-        </nav>
-    </header>
-
     <section class="wrapper" id="inicio">
+        <header>
+            <nav class="navbar">
+                <div class="brand">
+                    <h2>JA<span>GS</span></h2>
+                </div>
+                <ul class="menu" id="menu">
+                    <li><a class="active" href="#inicio">INICIO</a></li>
+                    <li><a href="#sobremi">SOBRE MI</a></li>
+                    <li><a href="#portafolio">PORTAFOLIO</a></li>
+                    <li><a href="#contacto">CONTACTO</a></li>
+                </ul>   
+                <div class="nav-responsive">
+                    <i class='bx bx-menu' id="open"></i>
+                    <i class='bx bx-x' id="close"></i>
+                </div>     
+            </nav>
+        </header>
         <main class="main">
             <div class="info-content">
                 <h1>JAHIR GONZÁLEZ</h1>
@@ -156,5 +159,7 @@
         </div>
     </section>
     
+    <script src="script.js"></script>
+
 </body>
 </html>
